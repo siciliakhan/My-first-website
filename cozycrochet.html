@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stitched with Love 🧶</title>
+    <style>
+        :root {
+            --yarn-pink: #ffafcc;
+            --yarn-cream: #fefae0;
+            --yarn-brown: #606c38;
+            --stitch-color: #dda15e;
+        }
+
+        body {
+            background-color: var(--yarn-cream);
+            background-image: radial-gradient(#e9edc9 1px, transparent 1px);
+            background-size: 20px 20px; /* Small "knit" texture */
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive;
+            color: #283618;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><text y="20" font-size="20">🪡</text></svg>'), auto;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px;
+            border-bottom: 5px dashed var(--stitch-color);
+            width: 100%;
+            background: white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .yarn-ball {
+            display: inline-block;
+            font-size: 3rem;
+            animation: roll 4s linear infinite;
+        }
+
+        @keyframes roll {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            max-width: 900px;
+        }
+
+        .crochet-card {
+            background: white;
+            padding: 15px;
+            border: 3px solid var(--yarn-pink);
+            border-radius: 15px;
+            text-align: center;
+            position: relative;
+            transition: transform 0.3s ease;
+            box-shadow: 5px 5px 0px var(--yarn-pink);
+        }
+
+        .crochet-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+        }
+
+        .crochet-card::before {
+            content: '🧵';
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--yarn-cream);
+            border-radius: 50%;
+        }
+
+        .emoji-art {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: var(--yarn-pink);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #ff8fab;
+        }
+
+        footer {
+            margin-top: auto;
+            padding: 20px;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="yarn-ball">🧶</div>
+        <h1>Hooked on Loops</h1>
+        <p>A cozy corner of the internet, one stitch at a time.</p>
+    </header>
+
+    <main class="gallery">
+        <div class="crochet-card">
+            <div class="emoji-art">🧸</div>
+            <h3>Amigurumi Bear</h3>
+            <p>Made with soft velvet yarn and a lot of patience.</p>
+            <button class="btn">View Pattern</button>
+        </div>
+
+        <div class="crochet-card">
+            <div class="emoji-art">🌸</div>
+            <h3>Daisy Coaster</h3>
+            <p>A quick afternoon project to brighten your desk.</p>
+            <button class="btn">View Pattern</button>
+        </div>
+
+        <div class="crochet-card">
+            <div class="emoji-art">🧣</div>
+            <h3>Infinity Scarf</h3>
+            <p>Chunky wool to keep you warm all winter long.</p>
+            <button class="btn">View Pattern</button>
+        </div>
+
+        <div class="crochet-card">
+            <div class="emoji-art">🐸</div>
+            <h3>Froggy Hat</h3>
+            <p>Because everyone needs a hat with eyes.</p>
+            <button class="btn">View Pattern</button>
+        </div>
+    </main>
+
+    <footer>
+        Hand-stitched with HTML & CSS ✨
+    </footer>
+
+</body>
+</html>
