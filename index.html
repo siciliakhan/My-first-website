@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duckie Lake</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: linear-gradient(to bottom, #a2d2ff, #bee1ff);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* The Lake */
+        .lake {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            background: radial-gradient(circle at center, #4cc9f0 0%, #4361ee 100%);
+            overflow: hidden;
+        }
+
+        /* Reflection/Ripples */
+        .ripple {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: ripple-effect 4s infinite;
+        }
+
+        /* The Ducks */
+        .duck-container {
+            position: absolute;
+            font-size: 3rem;
+            cursor: pointer;
+            user-select: none;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .duck {
+            display: inline-block;
+            animation: bobbing 2s ease-in-out infinite;
+        }
+
+        /* Lily Pads */
+        .lily-pad {
+            position: absolute;
+            font-size: 2rem;
+            opacity: 0.8;
+        }
+
+        /* Animations */
+        @keyframes bobbing {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(5deg); }
+        }
+
+        @keyframes swim-around {
+            0% { left: -10%; top: 20%; }
+            25% { left: 40%; top: 60%; }
+            50% { left: 80%; top: 30%; }
+            75% { left: 30%; top: 10%; }
+            100% { left: -10%; top: 20%; }
+        }
+
+        @keyframes ripple-effect {
+            0% { transform: scale(0); opacity: 0.5; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        /* Individual Duck Paths */
+        .duck1 { animation: swim-around 25s linear infinite; }
+        .duck2 { animation: swim-around 35s linear infinite reverse; top: 50%; }
+
+        .ui-text {
+            position: absolute;
+            bottom: 20px;
+            width: 100%;
+            text-align: center;
+            color: white;
+            text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lake">
+        <div class="lily-pad" style="top: 20%; left: 15%;">🪷</div>
+        <div class="lily-pad" style="top: 70%; left: 80%;">🪷</div>
+        <div class="lily-pad" style="top: 40%; left: 50%;">🍃</div>
+
+        <div class="duck-container duck1">
+            <span class="duck">🦆</span>
+        </div>
+
+        <div class="duck-container duck2">
+            <span class="duck">🦆</span>
+        </div>
+
+        <div class="ui-text">
+            <h2>Just two ducks vibing.</h2>
+            <p>Watch them swim...</p>
+        </div>
+    </div>
+
+</body>
+</html>
